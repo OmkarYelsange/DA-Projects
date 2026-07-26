@@ -1,0 +1,36 @@
+CREATE DATABASE M2_Project;
+
+USE M2_Project;
+# DROP TABLE M2Readings; 
+CREATE TABLE M2Readings (
+timer VARCHAR(30),
+temp DECIMAL(5,2),
+vibX DECIMAL(8,3),
+vibY DECIMAL(8,3),
+vibZ DECIMAL(8,3),
+magnitude DECIMAL(8,3),
+rms DECIMAL(8,3)
+);
+
+SELECT * FROM M2Readings;
+
+SELECT STR_TO_DATE(timer,'%d/%m/%Y %H:%i:%s')
+FROM M2Readings;
+
+# AVERAGE TEMPERATURE
+SELECT AVG(temp) AS Avg_Temp 
+FROM M2Readings;
+
+# MAXIMUM RMS
+SELECT MAX(rms) AS MAX_RMS
+FROM M2Readings;
+
+# AVERAGE VIBRATIONS
+SELECT AVG(vibX) AS AVG_X
+FROM M2Readings;
+SELECT AVG(vibY) AS AVG_Y
+FROM M2Readings;
+SELECT AVG(vibz) AS AVG_Z
+FROM M2Readings;
+SELECT AVG(vibX+vibY+vibz)/3 AS AVG_VIBRATIONS
+FROM M2Readings;
