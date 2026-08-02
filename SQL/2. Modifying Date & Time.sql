@@ -1,4 +1,5 @@
 # Modifying Timing and Separating Date & Time 
+SELECT * FROM Sensor_Data;
 SELECT Timing FROM Sensor_Data LIMIT 10;
 
 ALTER TABLE Sensor_Data
